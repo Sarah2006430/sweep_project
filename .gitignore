@@ -1,0 +1,9 @@
+.venv/
+__pycache__/
+node_modules/
+frontend/dist/
+data/sweep.db
+data/evidence/
+runs/
+weights/*.pt
+.DS_Store

@@ -1,0 +1,23 @@
+{
+  "source": "data/demo/floor.mp4",
+  "reference": "data/demo/reference.jpg",
+  "detector": "diff",
+  "person_model": null,
+  "model": "weights/litter.pt",
+  "conf": 0.3,
+  "imgsz": 640,
+  "frame_stride": 2,
+  "loop": true,
+  "realtime": true,
+  "diff": {"threshold": 22, "min_area_frac": 0.0006, "max_area_frac": 0.08, "mask_people": true},
+  "class_map": {"garbage": "litter", "Scattered Garbage": "litter", "plastic-paper scraps": "litter",
+                "overflow": "overflow", "Overflow": "overflow"},
+  "ignore_classes": ["garbage_bin", "Closed", "Opened"],
+  "rules": {"iou_match": 0.3, "confirm_s": 3, "ticket_after_s": 15, "clean_after_s": 5, "gap_s": 2, "still_px": 20},
+  "score": {"weights": {"litter": 6, "debris": 6, "bag": 12, "overflow": 25}, "age_ref": 15, "density": 200, "density_cap": 30},
+  "zones": [
+    {"id": "entrance", "name": "Entrance", "poly": [[60, 190], [480, 190], [480, 520], [60, 520]]},
+    {"id": "seating", "name": "Seating area", "poly": [[480, 190], [900, 190], [900, 520], [480, 520]]}
+  ],
+  "staff": ["Housekeeping A", "Housekeeping B", "Housekeeping C"]
+}
